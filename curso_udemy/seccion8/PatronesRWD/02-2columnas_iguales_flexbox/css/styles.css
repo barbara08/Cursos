@@ -1,0 +1,58 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** CODIGO AQUI **/
+
+@media (min-width: 768px){
+    .dos-columnas {
+        display: flex;
+        /** separación entre las dos columnas, 
+        hay que especificar primero el selector hijo "entrada-blog" **/
+        justify-content: space-between;
+    }
+    .entrada-blog {
+        /** calcula 50% y réstale 1rem para la sepración entre las dos columnas, 
+        además hay que añadir justify-contant en el elemento padre **/
+        /** DOS formas de ponerlo con flex-basic o flex que toma 3 valores **/
+        flex-basis: calc(50% - 1rem);
+        /** 0 => factor de crecimiento; 0 => valor de hacerlo más pequeño; calc() => es el flex-basic (su tamaño base **/
+        flex: 0 0 calc(50% - 1rem);
+    }
+}

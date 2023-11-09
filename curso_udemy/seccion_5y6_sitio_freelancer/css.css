@@ -1,0 +1,275 @@
+:root{
+--blanco: #ffffff;
+--oscuro: #212121;
+--primario: #FFC107;
+--secundario: #0097A7;
+--gris: #757575;
+--grisClaro: #DFE9F3;
+}
+/* https://fonts.adobe.com/fonts/open-sans   para las tipo de letra*/
+/* Globales**/
+html {
+	font-size: 62.5%;
+	box-sizing: border-box; /* Hack para Box Model **/
+	scroll-snap-type: y mandatory;
+}
+
+/** Scroll Snap  para cada section **/
+.servicios,
+.navegacion-principal,
+.formulario {
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+}
+
+
+
+*, *::before, *:after {
+	box-sizing: inherit;
+}
+body {
+	font-size: 16px;    /* 1rem = 10px */
+	font-family: 'Krub', sans-serif;
+	/* color de fondo de toda la pg, va degradado de abajo hacia arriba**/
+	/* to top => va hacia arriba**/
+	background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+}
+.contenedor {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+.boton {
+	background-color: var(--secundario);
+	color: var(--blanco);
+	padding: 1rem 3rem;
+	margin-top: 2rem;
+	font-size: 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: .5rem;
+	/** Cuando la pantalla se vea más pequeña el botón se verá más grande (más visible**/
+	width: 90%;
+	text-align: center;
+	border: none;
+}
+@media (min-width: 768px) {
+	/** resetea el botón, cuando se vea más grande el botón aparecerá a su tamaño normal**/
+	.boton {
+		width: auto;
+	}
+}
+.boton:hover {
+	/*  para que salga la mano cuando está sobre el botón **/
+	cursor: pointer;
+}
+.sombra{
+	/* https://www.cssmatic.com/box-shadow **/
+	-webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+	-moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+	box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+	
+	background-color: var(--blanco);
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+/* Tipografía**/
+h1{
+	font-size: 3.8rem;
+}
+h2{
+	font-size: 2.8rem;
+}
+h3{
+	font-size: 1.8rem;
+}
+h1,h2,h3{
+	text-align: center;
+}
+/* Títulos**/
+.titulo span {
+	font-size: 2rem;
+}
+/* Utilidades */
+/* Para el botón enviar */
+.w-100 {
+	width: 100%;
+}
+@media(min-width:768px) {
+	.w-100 {
+		width: auto;
+	}
+}
+.flex {
+	display: flex;
+}
+.alinear-derecha {
+	justify-content: flex-end;
+
+}
+
+
+/* Navegación Principal**/
+.nav-bg {
+	background-color: var(--secundario);
+}
+
+.navegacion-principal {
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+}
+.navegacion-principal a {
+	color: var(--blanco);
+	text-decoration: none;	
+	font-size: 2rem;
+	font-weight: 700;
+	padding: 1rem;
+}
+.navegacion-principal a:hover {
+	background-color: var(--primario);
+	color: var(--oscuro);
+}
+
+@media (min-width: 768px) {
+	.navegacion-principal {
+		flex-direction: row;
+
+	}
+}
+/* Hero**/
+.hero{
+	background-image: url(../img/mapa.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 450px;
+	/** al padre asignamos relativo y al hijo (.contenido-hero) absoluto **/
+	position: relative;
+}
+.contenido-hero{
+	position: absolute;
+	background-color: rgb(0 0 0 / 60%);
+	width: 100%;
+	height: 100%;
+	/**alinear horizontal y verticalmente, siempre es igual **/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.contenido-hero h2, .contenido-hero p {
+	color: var(--blanco);
+}
+.contenido-hero .ubicacion{
+	display: flex;
+	align-items: flex-end;
+
+}
+
+/** Servicioss **/
+@media(min-width: 768px	){
+	.servicios {
+		display: grid;
+		/*  **/
+		/* Formas de crear 3 columnas:
+		grid-template-columns: 33.3% 33.3% 33.3%;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);   el 3 es el nº de columns
+		**/
+		grid-template-columns: repeat(3, 1fr);
+		/* Para la separación del texto **/
+		column-gap: 1rem;
+		/* Versión corta de definir filas y columnas, se empieza por las filas
+				tañano fila / tamaño columnas **/
+	}
+}
+
+
+.servicio{
+	display: flex;
+	flex-direction: column;
+	align-items: center
+}
+.servicio h3{
+	color: var(--secundario);
+	font-weight: normal;
+}
+.servicio p {
+	line-height: 2;
+}
+.servicio .iconos {
+	height: 15rem;
+	width: 15rem;
+	background-color: var(--primario);
+	border-radius: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+/** Contacto **/
+.formulario {
+	background-color: var(--gris);
+	width: min(60rem, 100%); /** Utilizar el valor más pequeño **/
+	margin: 0 auto;
+	padding: 2rem;
+	border-radius: 1rem;
+
+}
+
+.formulario fieldset {
+	border: none;
+}
+.formulario legend {
+	text-align: center;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--primario);
+}
+
+
+@media (min-width: 768px) {
+	.contenedor-campos {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto auto 20rem;
+		column-gap: 1rem;
+	}
+	.campo:nth-child(3),  /* el 3 para seleccionar correo */
+	.campo:nth-child(4)  /* el 4 para seleccionar mensaje */
+		{   
+			grid-column: 1 / 3;
+
+		}
+}
+.campo {
+	margin-bottom: 1rem;
+}
+.campo label {
+	color: var(--blanco);
+	font-weight: bold;
+	margin-bottom: .5rem;
+	display: block;
+}
+
+.input-text {
+	width: 100%;
+	border: none;
+	padding: 1.5rem;
+	border-radius: .5rem;
+
+}
+
+.enviar .boton {
+	width: 100%; /* está definido como el 90% pero aqui queremos el 100% */
+}
+
+/* Footer**/
+.footer {
+	text-align: center;
+}
+
