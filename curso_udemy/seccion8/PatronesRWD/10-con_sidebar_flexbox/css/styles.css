@@ -49,3 +49,23 @@ p {
 
 
 /** CODIGO AQUI **/
+
+@media (min-width: 768px) {
+    .con-sidebar{
+        display: flex;
+       /** SI USAMOS gap NO HACE FALTA justify-conntent, se USA con calc()
+       justify-content: space-between;  **/
+        gap: 2rem; 
+    }
+    aside{
+        flex: 3;
+    }
+    article{
+        flex: 1;
+    }
+
+
+}
+
+
+
