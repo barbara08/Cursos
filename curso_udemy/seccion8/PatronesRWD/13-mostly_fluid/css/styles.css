@@ -37,3 +37,28 @@ p {
 }
 
 /** CODIGO AQUI **/
+
+.contenedor{
+    max-width: 120rem; /**para max 1200px **/
+    width: 95%; /** no es recomendable poner cantidad fija, mejor en %**/
+    margin: 0 auto; /**auto para el lado izq ydcho **/
+}
+@media(min-width: 768px){
+    .contenedor{
+        width: 80%;
+    }
+}
+
+@media(min-width: 992px){
+    .contenedor{
+        width: 60%;
+    }
+}
+img{
+    max-width: 100%;
+}
+
+
+
+
+
