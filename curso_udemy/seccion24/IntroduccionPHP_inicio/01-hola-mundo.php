@@ -1,12 +1,12 @@
 <?php
 // VIDEO 255
+//Extensión    php intelephense y php intellisense
 echo "hola mundo (con echo)";
 echo "<br/>";
 print "hola mundo (con print)";
 echo "<br/>";
 echo "var_dump dice el tipo de dato: ";
 var_dump(20);
-
 
 
 ?>
