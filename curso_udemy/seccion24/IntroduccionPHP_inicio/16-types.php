@@ -5,13 +5,12 @@ include 'includes/header.php';
 
 //VIDEO 271
 //Después de los : se puede declarar el tipo de valor que quieras que se devuelva
-function usuarioAutenticado(bool $autenticado) : ?string {
+function usuarioAutenticado(bool $autenticado) : string|int {
     if($autenticado){
         return "El usuario está autenticado.";
     }else{
-        //return 20;
-        return "El usuario NO está autenticado.";
-
+        return 20;
+        //return "El usuario NO está autenticado.";
     }
 };
 
